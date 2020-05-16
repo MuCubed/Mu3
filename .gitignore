@@ -1,0 +1,15 @@
+# Source Kik APK #
+*.apk
+kik-messenger-*
+
+# APKTool #
+apktool*.jar
+*.log
+
+# Intellij Files #
+*.iml
+.idea
+
+# Gradle #
+gradle
+.gradle
