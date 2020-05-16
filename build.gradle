@@ -9,15 +9,15 @@ task decompile(type:Exec) {
     if (!apkTool.isFile()) {
         if (OperatingSystem.current().isLinux()) {
             println 'Decompiling on Linux'
-            commandLine 'java -jar apktool_' + APKToolVersion + '.jar d kik-' + KikVersion + '.apk'
+            commandLine 'java -jar apktool_' + APKToolVersion + '.jar d kik-messenger-' + KikVersion + '.apk'
         }
         if (OperatingSystem.current().isWindows()) {
             println 'Decompiling on Windows'
-            commandLine "cmd","/c",'java -jar apktool_' + APKToolVersion + '.jar d kik-' + KikVersion + '.apk'
+            commandLine "cmd","/c",'java -jar apktool_' + APKToolVersion + '.jar d kik-messenger-' + KikVersion + '.apk'
         }
         if (OperatingSystem.current().isMacOsX()) {
             println 'Decompiling on MacOS'
-            commandLine 'java -jar apktool_' + APKToolVersion + '.jar d kik-' + KikVersion + '.apk'
+            commandLine 'java -jar apktool_' + APKToolVersion + '.jar d kik-messenger-' + KikVersion + '.apk'
         }
     }
 }
@@ -35,7 +35,7 @@ task compile(type:Exec) {
         }
         if (OperatingSystem.current().isWindows()) {
             println 'Compiling on Windows'
-            commandLine "cmd","/c",'apktool_' + APKToolVersion + '.jar b kik-messenger-' + KikVersion + ' -o ' + ProjectName + '_' + KikVersion + '.apk'
+            commandLine "cmd","/c",'java -jar apktool_' + APKToolVersion + '.jar b kik-messenger-' + KikVersion + ' -o ' + ProjectName + '_' + KikVersion + '.apk'
         }
         if (OperatingSystem.current().isMacOsX()) {
             println 'Compiling on MacOS'
